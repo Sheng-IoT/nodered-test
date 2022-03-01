@@ -136,6 +136,8 @@
       ],
       "logo": "https://nodered.org/about/resources/media/node-red-icon-2.png",
       "name": "NodeRed",
+      "title": "NodeRed",
+      "network": "bridge",
       "platform": "linux",
       "repository": {
         "stackfile": "nodered.yml",
