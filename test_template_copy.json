@@ -139,7 +139,7 @@
       "platform": "linux",
       "repository": {
         "stackfile": "nodered.yml",
-        "url": "https://github.com/Sheng-IoT/node-red-docker"
+        "url": "https://github.com/Sheng-IoT/nodered-test"
       },
       "type": 3,
       "note":"Browse to <a herf='http://{host-ip}:1880'>http://{host-ip}:1880</a> to access the web interface."
