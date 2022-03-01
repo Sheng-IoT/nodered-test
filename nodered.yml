@@ -8,6 +8,9 @@ services:
     restart: unless-stopped
     environment:
         - NODE_RED_ENABLE_PROJECTS=${NODE_RED_ENABLE_PROJECTS}
+        - PUID=${PUID}
+        - PGID=${PGID}
+        - TZ=${TZ}
     volumes:
         - '/node_red_data:/data'
     ports:
