@@ -18,6 +18,6 @@ services:
     devices:
         - "/dev/vcio:/dev/vcio"
         - "/dev/mem:/dev/mem"
-        - "/dev/i2c*:/dev/i2c*"
+        - "/dev/i2c-1:/dev/i2c-1"
     cap_add:
         - CAP_SYS_RAWIO
