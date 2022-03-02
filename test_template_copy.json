@@ -135,12 +135,12 @@
         }
       ],
       "logo": "https://nodered.org/about/resources/media/node-red-icon-2.png",
-      "name": "NodeRed",
       "title": "NodeRed",
-      "network": "bridge",
+      "name": "NodeRed",
       "platform": "linux",
+      "network": "bridge",
       "repository": {
-        "stackfile": "nodered.yml",
+        "stackfile": "Stack/nodered.yml",
         "url": "https://github.com/Sheng-IoT/nodered-test"
       },
       "type": 3,
