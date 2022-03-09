@@ -1,6 +1,12 @@
 #!/sbin/openrc-run
 
 description="Start the pigpiod daemon."
+depend() {
+	want coolservice
+}
+
 command="/usr/local/bin/pigpiod"
-command_user="root:root"
-procname="pigpiod"
+#command_user="root:root"
+#procname="pigpiod"
+pidfile=pigpio.pid
+
