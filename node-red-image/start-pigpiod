@@ -1,0 +1,6 @@
+#!/sbin/openrc-run
+
+description="Start the pigpiod daemon."
+command="/usr/local/bin/pigpiod"
+command_user="root:root"
+procname="pigpiod"

@@ -1,0 +1,21 @@
+version: "3.7"
+
+services:
+  node-red:
+    image: sheng2216/node-red:latest
+    container_name: node-red-raw
+    environment:
+      - TZ=Europe/Amsterdam
+    ports:
+      - "1880:1880"
+    restart: always
+    devices:
+      - "/dev/vcio:/dev/vcio"
+      - "/dev/mem:/dev/mem"
+    cap_add: 
+      - CAP_SYS_RAWIO 
+    volumes:
+      - node-red-data:/data
+
+volumes:
+  node-red-data:
