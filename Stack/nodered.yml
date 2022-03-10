@@ -17,16 +17,18 @@ services:
     group_add:
       - 998
     environment:
-        - NODE_RED_ENABLE_PROJECTS=${NODE_RED_ENABLE_PROJECTS}
-        - PUID=${PUID}
-        - PGID=${PGID}
-        - TZ=${TZ}
+      - NODE_RED_ENABLE_PROJECTS=${NODE_RED_ENABLE_PROJECTS}
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
     volumes:
-        - '/node_red_data:/data'
+      - '/node_red_data:/data'
     ports:
-        - "1880:1880/tcp"
+      - "1880:1880/tcp"
     devices:
-        - "/dev/i2c-1:/dev/i2c-1"
+      - "/dev/i2c-1:/dev/i2c-1"
+    networks:
+      - node-red
 
 volumes:
   node-red-data:
