@@ -22,7 +22,7 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
-      - '/node_red_data:/data'
+      - 'node_red_data:/data'
     ports:
       - "1880:1880"
     devices:
@@ -30,7 +30,6 @@ services:
     networks:
       - node-red
 
-volumes:
-  node-red-data:
+
 networks: 
   node-red:
