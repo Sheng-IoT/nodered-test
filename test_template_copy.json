@@ -138,7 +138,6 @@
       "title": "NodeRed",
       "name": "NodeRed",
       "platform": "linux",
-      "network": "bridge",
       "repository": {
         "stackfile": "Stack/nodered.yml",
         "url": "https://github.com/Sheng-IoT/nodered-test"
