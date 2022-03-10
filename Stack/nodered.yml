@@ -14,7 +14,8 @@ services:
     container_name: NodeRed
     restart: unless-stopped
     user: node-red
-    group_add: 998
+    group_add: 
+      - 998
     environment:
       - NODE_RED_ENABLE_PROJECTS=${NODE_RED_ENABLE_PROJECTS}
       - PUID=${PUID}
