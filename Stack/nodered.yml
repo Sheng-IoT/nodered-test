@@ -30,7 +30,3 @@ services:
     networks:
       - node-red
 
-volumes:
-  node-red-data:
-netowkrs: 
-  node-red:
