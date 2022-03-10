@@ -1,4 +1,4 @@
-version: '2'
+version: "3.7"
 
 services:
   pigpiod:
@@ -22,12 +22,11 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
-      - 'node-red-data:/data'
+      - node-red-data:/data
     ports:
       - "1880:1880"
     devices:
-      - "/dev/i2c-1:/dev/i2c-1"
-        
+      - "/dev/i2c-1:/dev/i2c-1"        
     networks:
       - node-red
 
