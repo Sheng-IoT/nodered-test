@@ -24,7 +24,7 @@ services:
     volumes:
       - '/node_red_data:/data'
     ports:
-      - "1880:1880/tcp"
+      - "1880:1880"
     devices:
       - "/dev/i2c-1:/dev/i2c-1"
     networks:
