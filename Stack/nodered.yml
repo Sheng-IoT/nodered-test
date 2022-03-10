@@ -31,6 +31,6 @@ services:
       - node-red
 
 volumes:
-  node-red-data
+  node-red-data:
 netowkrs: 
-  node-red
+  node-red:
