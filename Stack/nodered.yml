@@ -13,16 +13,13 @@ services:
     image: sheng2216/nodered-docker:alpine-latest
     container_name: NodeRed
     restart: unless-stopped
-    user: node-red
-    group_add: 
-      - 998
     environment:
       - NODE_RED_ENABLE_PROJECTS=${NODE_RED_ENABLE_PROJECTS}
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
-      - 'node_red_data:/data'
+      - 'node-red-data:/data'
     ports:
       - "1880:1880"
     devices:
@@ -30,6 +27,7 @@ services:
     networks:
       - node-red
 
-
+volumes:
+  node-red-data:
 networks: 
   node-red:
