@@ -1,4 +1,4 @@
-version: "2"
+version: '2'
 
 services:
 
@@ -6,7 +6,6 @@ services:
     image: zinen2/alpine-pigpiod
     container_name: pigpiod
     privileged: true
-    restart: unless-stopped
     networks:
       - node-red
 
@@ -16,20 +15,22 @@ services:
     restart: unless-stopped
     user: node-red
     group_add:
-      - 998
+        - 998
     environment:
       - NODE_RED_ENABLE_PROJECTS=${NODE_RED_ENABLE_PROJECTS}
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
-      - node-red-data:/data
+        - 'node-red-data:/data'
     ports:
-      - "1880:1880"
+        - "1880:1880/tcp"
     devices:
-      - "/dev/i2c-1:/dev/i2c-1"
-    networks:
-      - node-red
+        - "/dev/vcio:/dev/vcio"
+        - "/dev/mem:/dev/mem"
+        - "/dev/i2c-1:/dev/i2c-1"
+    cap_add:
+      - CAP_SYS_RAWIO
 
 volumes:
   node-red-data:
