@@ -2,10 +2,20 @@ version: '2'
 
 services:
 
+  pigpiod:
+    image: zinen2/alpine-pigpiod
+    container_name: pigpiod
+    privileged: true
+    networks:
+      - node-red
+
   nodered:
     image: sheng2216/nodered-docker:alpine-latest
     container_name: NodeRed
     restart: unless-stopped
+    user: node-red
+    group_add:
+      - 998
     environment:
         - NODE_RED_ENABLE_PROJECTS=${NODE_RED_ENABLE_PROJECTS}
         - PUID=${PUID}
@@ -16,8 +26,9 @@ services:
     ports:
         - "1880:1880/tcp"
     devices:
-        - "/dev/vcio:/dev/vcio"
-        - "/dev/mem:/dev/mem"
         - "/dev/i2c-1:/dev/i2c-1"
-    cap_add:
-        - CAP_SYS_RAWIO
+
+volumes:
+  node-red-data:
+netowkrs: 
+  node-red:
