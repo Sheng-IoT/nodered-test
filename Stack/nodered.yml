@@ -5,6 +5,7 @@ services:
     image: zinen2/alpine-pigpiod
     container_name: pigpiod
     privileged: true
+    restart: unless-stopped
     networks:
       - node-red
 
@@ -25,11 +26,8 @@ services:
     ports:
       - "1880:1880"
     devices:
-        - "/dev/vcio:/dev/vcio"
-        - "/dev/mem:/dev/mem"
-        - "/dev/i2c-1:/dev/i2c-1"
-    cap_add:
-      - CAP_SYS_RAWIO    
+      - "/dev/i2c-1:/dev/i2c-1"
+        
     networks:
       - node-red
 
