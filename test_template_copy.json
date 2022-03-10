@@ -143,11 +143,6 @@
         "stackfile": "Stack/nodered.yml",
         "url": "https://github.com/Sheng-IoT/nodered-test"
       },
-      "volumes": [
-        {
-          "auto": "~/node-red-data",
-          "container": "/data"
-        },
       "type": 3,
       "note":"Browse to <a herf='http://{host-ip}:1880'>http://{host-ip}:1880</a> to access the web interface."
     },
