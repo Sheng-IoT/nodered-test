@@ -16,9 +16,6 @@ services:
     image: sheng2216/node-red:new-group_latest
     container_name: NodeRed
     restart: unless-stopped
-    user: node-red
-    group_add:
-        - 998
     environment:
       - NODE_RED_ENABLE_PROJECTS=${NODE_RED_ENABLE_PROJECTS}
       - PUID=${PUID}
