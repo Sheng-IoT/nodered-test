@@ -1,14 +1,19 @@
+version: '3.7'
+
 services:
 
   pigpiod:
     image: zinen2/alpine-pigpiod
     container_name: pigpiod
+    restart: unless-stopped
     privileged: true
+    ports:
+        - "8888:8888/tcp"
     networks:
       - node-red
 
   nodered:
-    image: sheng2216/nodered-docker:alpine-latest
+    image: sheng2216/node-red:new-group_latest
     container_name: NodeRed
     restart: unless-stopped
     user: node-red
@@ -25,6 +30,8 @@ services:
         - "1880:1880/tcp"
     devices:
         - "/dev/i2c-1:/dev/i2c-1"
+    networks:
+      - node-red
 
 
 volumes:
