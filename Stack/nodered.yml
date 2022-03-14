@@ -13,7 +13,7 @@ services:
       - node-red
 
   nodered:
-    image: sheng2216/node-red:i2c-added
+    image: sheng2216/nodered-docker:i2c-added
     container_name: NodeRed
     restart: unless-stopped
     user: node-red
