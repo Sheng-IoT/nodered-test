@@ -1,30 +1,40 @@
-                                                             
+version: '3.7'
+
 services:
 
   pigpiod:
     image: zinen2/alpine-pigpiod
     container_name: pigpiod
+    restart: unless-stopped
     privileged: true
+    ports:
+        - "8888:8888/tcp"
     networks:
       - node-red
 
-  node-red:
-    image: sheng2216/nodered-docker:alpine-latest
-    container_name: node-red
+  nodered:
+    image: sheng2216/nodered-docker:i2c-dialout-added
+    container_name: NodeRed
+    restart: unless-stopped
     user: node-red
     group_add:
-      - 998
+        - 998
+        - dialout
+    environment:
+      - NODE_RED_ENABLE_PROJECTS=false
+      - PUID=1000
+      - PGID=100
+      - TZ=Europe/London
+    volumes:
+        - 'node-red-data:/data'
+    ports:
+        - "1880:1880/tcp"
+    devices:
+        - "/dev/i2c-1:/dev/i2c-1"
+        - "/dev/ttyUSB0:/dev/ttyUSB0"
+        - "/dev/ttyUSB1:/dev/ttyUSB1"
     networks:
       - node-red
-    environment:
-      - TZ=Europe/London
-    ports:
-      - "1880:1880"
-    restart: unless-stopped
-    volumes:
-      - node-red-data:/data
-    devices:
-      - "/dev/i2c-1:/dev/i2c-1"
 
 
 volumes:
