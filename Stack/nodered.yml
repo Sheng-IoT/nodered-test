@@ -31,6 +31,8 @@ services:
         - "1880:1880/tcp"
     devices:
         - "/dev/i2c-1:/dev/i2c-1"
+        - "/dev/ttyUSB0:/dev/ttyUSB0" 
+        - "/device /dev/ttyUSB1:/dev/ttyUSB1"
     networks:
       - node-red
 
