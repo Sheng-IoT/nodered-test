@@ -13,12 +13,13 @@ services:
       - node-red
 
   nodered:
-    image: sheng2216/node-red:new-group_latest
+    image: sheng2216/node-red:i2c-added
     container_name: NodeRed
     restart: unless-stopped
     user: node-red
     group_add:
         - i2c
+        - dialout
     environment:
       - NODE_RED_ENABLE_PROJECTS=${NODE_RED_ENABLE_PROJECTS}
       - PUID=${PUID}
