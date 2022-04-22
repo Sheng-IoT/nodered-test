@@ -3,6 +3,9 @@ FROM nodered/node-red:2.2.2 AS base
 
 USER root
 
+# Install libgpiod
+RUN apk add libgpiod-dev
+
 # Copy package.json contains curated version of Node-RED NPM module and node dependencies
 COPY package.json .
 
