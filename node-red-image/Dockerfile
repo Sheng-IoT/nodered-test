@@ -13,7 +13,7 @@ COPY package.json .
 RUN npm install --unsafe-perm --no-update-notifier --no-fund --only=production
 
 RUN addgroup -g 998 i2c
-RUN addgroup node-red i2c
-RUN addgroup node-red dialout
+#RUN addgroup node-red i2c
+#RUN addgroup node-red dialout
 
 USER node-red
