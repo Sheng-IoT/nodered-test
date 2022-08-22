@@ -13,7 +13,7 @@ RUN apk add libgpiod-dev
 COPY package.json .
 
 # Install node-red nodes
-RUN npm install -g npm \
+RUN npm install --location=global npm && \
     npm install --unsafe-perm --no-update-notifier --no-fund --only=production 
     
     
