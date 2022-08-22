@@ -13,8 +13,10 @@ RUN apk add libgpiod-dev
 COPY package.json .
 
 # Install node-red nodes
-RUN npm install --unsafe-perm --no-update-notifier --no-fund --only=production
-
+RUN npm install -g npm \
+    npm install --unsafe-perm --no-update-notifier --no-fund --only=production 
+    
+    
 RUN addgroup -g 998 i2c
 RUN addgroup node-red i2c
 RUN addgroup node-red dialout
