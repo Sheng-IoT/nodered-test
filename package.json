@@ -46,7 +46,6 @@
         "@rakwireless/pi4ioe5v": "^1.0.0",
         "@rakwireless/ads7830": "^1.0.0",
         "@rakwireless/mcp-pcf-aio": "^1.0.0",
-        "@rakwireless/pn532": "^1.0.0",
         "@rakwireless/pn532-i2c": "^1.0.0"
     },
     "engines": {
